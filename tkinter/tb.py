@@ -4,21 +4,26 @@ import ttkbootstrap as tb
 import os
 import sys
 
-counter = 0
-def changer():
-  global counter
-  counter += 1
-  if counter % 2 == 0:
-    label.config(text='Hello World')
-  else:
-    label.config(text='Goodbye World')
+# counter = 0
+# def changer():
+#   global counter
+#   counter += 1
+#   if counter % 2 == 0:
+#     label.config(text='Hello World')
+#   else:
+#     label.config(text='Goodbye World')
 
-def checker():
-  if var1.get() == 1:
-    label.config(text='Checked')
-  else:
-    label.config(text='Unchecked')
-  
+# def checker():
+#   if var1.get() == 1:
+#     label.config(text='Checked')
+#   else:
+#     label.config(text='Unchecked')
+
+def clicker():
+  my_label.config(text=f"Kamu menekan hari {my_combo.get()}")
+
+def click_bind(e):
+  my_label.config(text=f"Kamu menekan hari {my_combo.get()}")
 
 root = tb.Window(themename='superhero')
 root.geometry('800x500')
@@ -94,7 +99,23 @@ root.iconphoto(False, icon)
 
 # resize button
 
+# combo box
+my_label = tb.Label(root, text='Hello World', font=("helvetica", 14))
 
-
-
+my_label.pack(pady=30)
+days = [
+  "Senin",
+  "Selasa",
+  "Rabu",
+  "Kamis",
+  "Jumat",
+  "Sabtu",
+  "Minggu"
+]
+my_combo = tb.Combobox(root, bootstyle="success", values=days)
+my_combo.pack()
+my_combo.current(0)
+my_button = tb.Button(root, bootstyle="danger", text='Klik', command=clicker)
+my_button.pack()
+my_combo.bind("<<ComboboxSelected>>", click_bind)
 root.mainloop()
