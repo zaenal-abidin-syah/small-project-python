@@ -132,7 +132,7 @@ proxies:
     server: 104.18.225.52
     port: 443
     type: vmess
-    uuid: b91a72a0-d9dd-11ee-b733-205c6d5f5d78
+    uuid: 182f99f0-dada-11ee-b536-205c6d5f5d78
     alterId: 0
     cipher: auto
     tls: true
@@ -140,7 +140,7 @@ proxies:
     servername: id-1.hihu.net
     network: ws
     ws-opts:
-      path: /r15mcgov
+      path: /tjwsa7zb
       headers:
         Host: id-1.hihu.net
     udp: true
