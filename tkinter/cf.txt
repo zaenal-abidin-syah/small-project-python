@@ -128,11 +128,11 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: R443:Vmess Indonesia Herza Limit 2024-03-10
+  - name: R443:Vmess Indonesia Herza Limit 2024-03-13
     server: 104.18.225.52
     port: 443
     type: vmess
-    uuid: 182f99f0-dada-11ee-b536-205c6d5f5d78
+    uuid: eaa35ca0-db9c-11ee-b537-205c6d5f5d78
     alterId: 0
     cipher: auto
     tls: true
@@ -140,15 +140,117 @@ proxies:
     servername: id-1.hihu.net
     network: ws
     ws-opts:
-      path: /tjwsa7zb
+      path: /5bj64osl
       headers:
         Host: id-1.hihu.net
+    udp: true
+  - name: R443:Vmess Singapore HE-1 Limit 2024-03-13
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: cccad620-db9c-11ee-b235-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg-1.hihu.net
+    network: ws
+    ws-opts:
+      path: /1i7k0usq
+      headers:
+        Host: sg-1.hihu.net
+    udp: true
+  - name: R443:Vmess USA OVH EAST 2024-03-13
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: f36e5580-db9b-11ee-b531-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us-22.hihu.net
+    network: ws
+    ws-opts:
+      path: /40xvodeq
+      headers:
+        Host: us-22.hihu.net
+    udp: true
+  - name: R443:Vmess USA Netflix 2024-03-13
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 21c5e060-db9c-11ee-b031-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us-netflix.hihu.net
+    network: ws
+    ws-opts:
+      path: /o58xwjz9
+      headers:
+        Host: us-netflix.hihu.net
+    udp: true
+  - name: R443:Vmess USA Virginia 2024-03-13
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 48612db0-db9c-11ee-b737-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us-23.hihu.net
+    network: ws
+    ws-opts:
+      path: /5oavuk8h
+      headers:
+        Host: us-23.hihu.net
+    udp: true
+  - name: R443:Vmess USA LA 2024-03-13
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 7158aef0-db9c-11ee-b338-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us-21.hihu.net
+    network: ws
+    ws-opts:
+      path: /vck3ua19
+      headers:
+        Host: us-21.hihu.net
+    udp: true
+  - name: R443:Vmess NL Fast (IPv4 & IPv6) 2024-03-13
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 90d137c0-db9c-11ee-b833-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: eu-2.hihu.net
+    network: ws
+    ws-opts:
+      path: /9yj3zma2
+      headers:
+        Host: eu-2.hihu.net
     udp: true
 proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-10
+      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - R443:Vmess Singapore HE-1 Limit 2024-03-13
+      - R443:Vmess USA OVH EAST 2024-03-13
+      - R443:Vmess USA Netflix 2024-03-13
+      - R443:Vmess USA Virginia 2024-03-13
+      - R443:Vmess USA LA 2024-03-13
+      - R443:Vmess NL Fast (IPv4 & IPv6) 2024-03-13
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -159,19 +261,45 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-10
+      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - R443:Vmess Singapore HE-1 Limit 2024-03-13
+      - R443:Vmess USA OVH EAST 2024-03-13
+      - R443:Vmess USA Netflix 2024-03-13
+      - R443:Vmess USA Virginia 2024-03-13
+      - R443:Vmess USA LA 2024-03-13
+      - R443:Vmess NL Fast (IPv4 & IPv6) 2024-03-13
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-10
+      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - R443:Vmess Singapore HE-1 Limit 2024-03-13
+      - R443:Vmess USA OVH EAST 2024-03-13
+      - R443:Vmess USA Netflix 2024-03-13
+      - R443:Vmess USA Virginia 2024-03-13
+      - R443:Vmess USA LA 2024-03-13
+      - R443:Vmess NL Fast (IPv4 & IPv6) 2024-03-13
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-10
+      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - R443:Vmess Singapore HE-1 Limit 2024-03-13
+      - R443:Vmess USA OVH EAST 2024-03-13
+      - R443:Vmess USA Netflix 2024-03-13
+      - R443:Vmess USA Virginia 2024-03-13
+      - R443:Vmess USA LA 2024-03-13
+      - R443:Vmess NL Fast (IPv4 & IPv6) 2024-03-13
+rule-providers:
+  clash:
+    type: http
+    behavior: domain
+    url: https://howdy.id/download/rules/clash.txt
+    path: ./providers/rule-provider_clash.yaml
+    interval: 86400
 rules:
+  - RULE-SET,clash,REJECT
   - MATCH,FASTSSH-SSHKIT-HOWDY
