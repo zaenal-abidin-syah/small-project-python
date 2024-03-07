@@ -298,7 +298,6 @@ rule-providers:
     type: http
     behavior: domain
     url: https://howdy.id/download/rules/clash.txt
-    path: ./providers/rule-provider_clash.yaml
     interval: 86400
 rules:
   - RULE-SET,clash,REJECT
