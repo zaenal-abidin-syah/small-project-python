@@ -322,7 +322,9 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - globalid
+      - globalsg
+      - globalca
       - R443:Vmess Singapore HE-1 Limit 2024-03-13
       - R443:Vmess USA OVH EAST 2024-03-13
       - R443:Vmess USA Netflix 2024-03-13
