@@ -128,21 +128,51 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: R443:Vmess Indonesia Herza Limit 2024-03-13
+  - name: globalid
+    server: 104.18.225.52
+    port: 443
+    type: vless
+    uuid: 578af6d8-9f77-404c-89dc-68d291adf2ae
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vless-wh-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vless-wh-id01.globalssh.xyz
+    udp: true
+  - name: globalsg
+    server: 104.18.225.52
+    port: 443
+    type: vless
+    uuid: eaa7abe7-d88d-4bb0-bf56-076cba7ad034
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vless-sg01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vless-sg01.globalssh.xyz
+    udp: true
+  - name: globalca
     server: 104.18.225.52
     port: 443
     type: vmess
-    uuid: eaa35ca0-db9c-11ee-b537-205c6d5f5d78
+    uuid: 269ef105-7c61-45ef-882f-e0abc3d12258
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: id-1.hihu.net
+    servername: vmess-ovh-ca01.globalssh.xyz
     network: ws
     ws-opts:
-      path: /5bj64osl
+      path: /vmess-ws
       headers:
-        Host: id-1.hihu.net
+        Host: vmess-ovh-ca01.globalssh.xyz
     udp: true
   - name: R443:Vmess Singapore HE-1 Limit 2024-03-13
     server: 104.18.225.52
@@ -244,7 +274,9 @@ proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - globalid
+      - globalsg
+      - globalca
       - R443:Vmess Singapore HE-1 Limit 2024-03-13
       - R443:Vmess USA OVH EAST 2024-03-13
       - R443:Vmess USA Netflix 2024-03-13
@@ -261,7 +293,9 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - globalid
+      - globalsg
+      - globalca
       - R443:Vmess Singapore HE-1 Limit 2024-03-13
       - R443:Vmess USA OVH EAST 2024-03-13
       - R443:Vmess USA Netflix 2024-03-13
@@ -274,7 +308,9 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - R443:Vmess Indonesia Herza Limit 2024-03-13
+      - globalid
+      - globalsg
+      - globalca
       - R443:Vmess Singapore HE-1 Limit 2024-03-13
       - R443:Vmess USA OVH EAST 2024-03-13
       - R443:Vmess USA Netflix 2024-03-13
