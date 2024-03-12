@@ -128,6 +128,53 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
+  - name: g1
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 761800f6-6444-46d8-a13e-fb7009f38193
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vmess-ikd-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vmess-ikd-id01.globalssh.xyz
+    udp: true
+  - name: g2
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 1b6557e6-f483-4085-98a0-99b39033d529
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vmess-wh-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vmess-wh-id01.globalssh.xyz
+    udp: true
+  - name: g3
+    server: 104.18.225.52
+    port: 443
+    type: vless
+    uuid: cbd2f74d-7066-4bbc-b9be-56e7a21e4276
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vless-ikd-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vless-ikd-id01.globalssh.xyz
+    udp: true
   - name: globalid
     server: 104.18.225.52
     port: 443
@@ -274,6 +321,9 @@ proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
+      - g1
+      - g2
+      - g3
       - globalid
       - globalsg
       - globalca
@@ -293,6 +343,9 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
+      - g1
+      - g2
+      - g3
       - globalid
       - globalsg
       - globalca
@@ -308,6 +361,9 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - g1
+      - g2
+      - g3
       - globalid
       - globalsg
       - globalca
@@ -322,6 +378,9 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
+      - g1
+      - g2
+      - g3
       - globalid
       - globalsg
       - globalca
