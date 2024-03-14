@@ -128,6 +128,38 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
+  - name: dfdsfdsfd-globalssh_vmess_ws_tls
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 772fc411-91bb-4dbb-8e90-abe2e81da63c
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vmess-ikd-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vmess-ikd-id01.globalssh.xyz
+    udp: true
+  - name: dfdsfdf-globalssh_vmess_ws_tls
+    server: 104.18.225.52
+    port: 443
+    type: vmess
+    uuid: 436d5e66-d229-4738-b219-6f79cf3de79d
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vmess-wh-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vmess-wh-id01.globalssh.xyz
+    udp: true
   - name: fdsgs-globalssh_vmess_ws_tls
     server: 104.18.225.52
     port: 443
@@ -148,15 +180,38 @@ proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
+      - dfdsfdsfd-globalssh_vmess_ws_tls
+      - dfdsfdf-globalssh_vmess_ws_tls
       - fdsgs-globalssh_vmess_ws_tls
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
       - DIRECT
-rule-providers:
-  clash:
-    type: http
-    behavior: domain
-    url: https://howdy.id/download/rules/clash.txt
-    path: ./providers/rule-provider_clash.yaml
-    interval: 86400
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - dfdsfdsfd-globalssh_vmess_ws_tls
+      - dfdsfdf-globalssh_vmess_ws_tls
+      - fdsgs-globalssh_vmess_ws_tls
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - dfdsfdsfd-globalssh_vmess_ws_tls
+      - dfdsfdf-globalssh_vmess_ws_tls
+      - fdsgs-globalssh_vmess_ws_tls
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - dfdsfdsfd-globalssh_vmess_ws_tls
+      - dfdsfdf-globalssh_vmess_ws_tls
+      - fdsgs-globalssh_vmess_ws_tls
 rules:
-  - RULE-SET,clash,REJECT
   - MATCH,FASTSSH-SSHKIT-HOWDY
