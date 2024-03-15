@@ -129,7 +129,7 @@ dns:
     - +.media.dssott.com
 proxies:
   - name: dfdsfdsfd-globalssh_vmess_ws_tls
-    server: 104.18.225.52
+    server: 104.22.5.240
     port: 443
     type: vmess
     uuid: 772fc411-91bb-4dbb-8e90-abe2e81da63c
@@ -145,7 +145,7 @@ proxies:
         Host: vmess-ikd-id01.globalssh.xyz
     udp: true
   - name: dfdsfdf-globalssh_vmess_ws_tls
-    server: 104.18.225.52
+    server: 104.22.4.240
     port: 443
     type: vmess
     uuid: 436d5e66-d229-4738-b219-6f79cf3de79d
@@ -161,7 +161,7 @@ proxies:
         Host: vmess-wh-id01.globalssh.xyz
     udp: true
   - name: fdsgs-globalssh_vmess_ws_tls
-    server: 104.18.225.52
+    server: 172.67.5.14
     port: 443
     type: vmess
     uuid: 6c9b02dd-fba3-493c-9843-bdab5ea1e84b
