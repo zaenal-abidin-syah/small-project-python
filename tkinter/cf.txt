@@ -21,15 +21,18 @@ dns:
   enhanced-mode: fake-ip
   listen: 0.0.0.0:7874
   nameserver:
+    - 202.152.254.13
     - 8.8.8.8
     - 1.0.0.1
     - https://dns.google/dns-query
   fallback:
+    - 202.152.254.13
     - 1.1.1.1
     - 8.8.4.4
     - https://cloudflare-dns.com/dns-query
     - 112.215.203.254
   default-nameserver:
+    - 202.152.254.13
     - 8.8.8.8
     - 1.1.1.1
     - 112.215.203.254
