@@ -1,5 +1,13 @@
-# non tls
-vmess://eyJhZGQiOiIxMDQuMTguMjI1LjUyIiwiYWlkIjoiMCIsImlkIjoiOWM2YTllMDAtYzFkNi0xMWVlLWI2MzEtMjA1YzZkNWY1ZDc4IiwiaG9zdCI6InNnLTEuaGlodS5uZXQiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZnVuOHZlYjAiLCJwb3J0IjoiODAiLCJwcyI6IlI4MDpWbWVzcyBTaW5nYXBvcmUgSEUtMSBMaW1pdCAyMDI0LTAyLTA5IiwidGxzIjoiIiwidHlwZSI6Im5vbmUiLCJ2IjoiMiJ9
-# tls vmess sg
-vmess://eyJhZGQiOiIxMDQuMTguMjI1LjUyIiwiYWlkIjoiMCIsImlkIjoiOWM2YTllMDAtYzFkNi0xMWVlLWI2MzEtMjA1YzZkNWY1ZDc4IiwiaG9zdCI6InNnLTEuaGlodS5uZXQiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZnVuOHZlYjAiLCJwb3J0IjoiNDQzIiwicHMiOiJSNDQzOlZtZXNzIFNpbmdhcG9yZSBIRS0xIExpbWl0IDIwMjQtMDItMDkiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 
+[General]
+dns-server = system, 108.137.44.39, 108.137.44.9, puredns.org:853
+
+[Proxy]
+Jjjsjsusha-globalssh_vmess_ws_tls = vmess, quiz.vidio.com, 443, username=cd4ac351-b02c-42d7-95ab-fbd428bd2eb2, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-ikd-id01.globalssh.xyz, ws-headers=Host:vmess-ikd-id01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
+Hgbheygsg-globalssh_vmess_ws_tls = vmess, quiz.vidio.com, 443, username=05aa5c6b-46f5-4bb8-92ac-19a70b08460f, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-wh-id01.globalssh.xyz, ws-headers=Host:vmess-wh-id01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
+Bbbshag-globalssh_vmess_ws_tls = vmess, quiz.vidio.com, 443, username=7526a55c-eb02-4d9d-8c70-ac9e01ab364c, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-sg01.globalssh.xyz, ws-headers=Host:vmess-sg01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
+
+[Proxy Group]
+AutoTestGroup = url-test,Jjjsjsusha-globalssh_vmess_ws_tls,Hgbheygsg-globalssh_vmess_ws_tls,Bbbshag-globalssh_vmess_ws_tls, url=http://www.gstatic.com/generate_204, interval=600, tolerance=100, timeout=5
+[Rule]
+FINAL,AutoTestGroup
