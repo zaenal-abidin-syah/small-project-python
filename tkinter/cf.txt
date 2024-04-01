@@ -21,18 +21,15 @@ dns:
   enhanced-mode: fake-ip
   listen: 0.0.0.0:7874
   nameserver:
-    - 202.152.254.13
     - 8.8.8.8
     - 1.0.0.1
     - https://dns.google/dns-query
   fallback:
-    - 202.152.254.13
     - 1.1.1.1
     - 8.8.4.4
     - https://cloudflare-dns.com/dns-query
     - 112.215.203.254
   default-nameserver:
-    - 202.152.254.13
     - 8.8.8.8
     - 1.1.1.1
     - 112.215.203.254
@@ -131,43 +128,11 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-  - name: dfdsfdsfd-globalssh_vmess_ws_tls
-    server: quiz.int.vidio.com
+  - name: dfdsfs-globalssh_vmess_ws_tls
+    server: quiz.vidio.com
     port: 443
     type: vmess
-    uuid: 772fc411-91bb-4dbb-8e90-abe2e81da63c
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: vmess-ikd-id01.globalssh.xyz
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vmess-ikd-id01.globalssh.xyz
-    udp: true
-  - name: dfdsfdf-globalssh_vmess_ws_tls
-    server: quiz.int.vidio.com
-    port: 443
-    type: vmess
-    uuid: 436d5e66-d229-4738-b219-6f79cf3de79d
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: vmess-wh-id01.globalssh.xyz
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vmess-wh-id01.globalssh.xyz
-    udp: true
-  - name: fdsgs-globalssh_vmess_ws_tls
-    server: quiz.int.vidio.com
-    port: 443
-    type: vmess
-    uuid: 6c9b02dd-fba3-493c-9843-bdab5ea1e84b
+    uuid: 50a39a43-4b03-4f72-ab86-ca9e0299a6b8
     alterId: 0
     cipher: auto
     tls: true
@@ -179,13 +144,43 @@ proxies:
       headers:
         Host: vmess-sg01.globalssh.xyz
     udp: true
+  - name: dsfsdfa-globalssh_vless_ws_tls
+    server: quiz.vidio.com
+    port: 443
+    type: vless
+    uuid: 7e8ec0ff-7582-41b4-9c00-66e90c5ddba2
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vless-ikd-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vless-ikd-id01.globalssh.xyz
+    udp: true
+  - name: sdfdsaa-globalssh_vless_ws_tls
+    server: quiz.vidio.com
+    port: 443
+    type: vless
+    uuid: a5e439ed-fcb5-4a0b-a11a-39029536d994
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vless-wh-id01.globalssh.xyz
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vless-wh-id01.globalssh.xyz
+    udp: true
 proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
-      - dfdsfdsfd-globalssh_vmess_ws_tls
-      - dfdsfdf-globalssh_vmess_ws_tls
-      - fdsgs-globalssh_vmess_ws_tls
+      - dfdsfs-globalssh_vmess_ws_tls
+      - dsfsdfa-globalssh_vless_ws_tls
+      - sdfdsaa-globalssh_vless_ws_tls
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -196,25 +191,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - dfdsfdsfd-globalssh_vmess_ws_tls
-      - dfdsfdf-globalssh_vmess_ws_tls
-      - fdsgs-globalssh_vmess_ws_tls
+      - dfdsfs-globalssh_vmess_ws_tls
+      - dsfsdfa-globalssh_vless_ws_tls
+      - sdfdsaa-globalssh_vless_ws_tls
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - dfdsfdsfd-globalssh_vmess_ws_tls
-      - dfdsfdf-globalssh_vmess_ws_tls
-      - fdsgs-globalssh_vmess_ws_tls
+      - dfdsfs-globalssh_vmess_ws_tls
+      - dsfsdfa-globalssh_vless_ws_tls
+      - sdfdsaa-globalssh_vless_ws_tls
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - dfdsfdsfd-globalssh_vmess_ws_tls
-      - dfdsfdf-globalssh_vmess_ws_tls
-      - fdsgs-globalssh_vmess_ws_tls
+      - dfdsfs-globalssh_vmess_ws_tls
+      - dsfsdfa-globalssh_vless_ws_tls
+      - sdfdsaa-globalssh_vless_ws_tls
 rules:
   - MATCH,FASTSSH-SSHKIT-HOWDY
