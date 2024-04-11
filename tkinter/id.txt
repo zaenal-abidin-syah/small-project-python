@@ -1,12 +1,13 @@
-[General]  
+
+[General]
 dns-server = system, 108.137.44.39, 108.137.44.9, puredns.org:853
 
-[Proxy]  
-vmessa-globalssh_vmess_ws_tls = vmess, quiz.int.vidio.com, 443, username=eba011ac-c133-4e85-be8b-f4940e892599, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-ovh-ca01.globalssh.xyz, ws-headers=Host:vmess-ovh-ca01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true  
-vmessb-globalssh_vmess_ws_tls = vmess, img.email3.vidio.com, 443, username=65964f48-50ac-4e32-9bc1-2f948f6980b6, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-dis-nl01.globalssh.xyz, ws-headers=Host:vmess-dis-nl01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true  
-vmessd-globalssh_vmess_ws_tls = vmess, quiz.staging.vidio.com, 443, username=2e52dd2b-2b95-4506-b3f7-f167303212d7, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-rs-us01.globalssh.xyz, ws-headers=Host:vmess-rs-us01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
+[Proxy]
+Hshsjhssgg-globalssh_vmess_ws_tls = vmess, quiz.int.vidio.com, 443, username=2c3610db-43f9-4080-b9d9-b3648ed54572, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-wh-id01.globalssh.xyz, ws-headers=Host:vmess-wh-id01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
+Gfvggffv-globalssh_vmess_ws_tls = vmess, img.email3.vidio.com, 443, username=c4749df7-4150-4333-9103-fb09d20ed764, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-sg01.globalssh.xyz, ws-headers=Host:vmess-sg01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
+Cghcxdfg-globalssh_vmess_ws_tls = vmess, quiz.staging.vidio.com, 443, username=a3f1eb8b-a536-44c1-b58e-48cd839d84ec, tls=true, ws=true, ws-path=/vmess-ws, sni=vmess-ikd-id01.globalssh.xyz, ws-headers=Host:vmess-ikd-id01.globalssh.xyz, skip-cert-verify=1, tfo=true, udp-relay=true
 
-[Proxy Group]  
-AutoTestGroup = url-test,vmessa-globalssh_vmess_ws_tls,vmessb-globalssh_vmess_ws_tls,vmessd-globalssh_vmess_ws_tls, url=http://www.gstatic.com/generate_204, interval=600, tolerance=100, timeout=5  
-[Rule]  
+[Proxy Group]
+AutoTestGroup = url-test,Hshsjhssgg-globalssh_vmess_ws_tls,Gfvggffv-globalssh_vmess_ws_tls,Cghcxdfg-globalssh_vmess_ws_tls, url=http://www.gstatic.com/generate_204, interval=600, tolerance=100, timeout=5
+[Rule]
 FINAL,AutoTestGroup
