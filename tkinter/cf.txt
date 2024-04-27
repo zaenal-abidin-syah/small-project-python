@@ -128,6 +128,21 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
+  - name: SG
+    server: sg3.socifiles.com
+    port: 443
+    type: vless
+    uuid: 0486eec0-04b6-11ef-81ed-1239d0255272
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.staging.vidio.com
+    network: ws
+    ws-opts:
+      path: /vlws
+      headers:
+        Host: quiz.staging.vidio.com
+    udp: true
   - name: Hccghgggg-globalssh_vless_ws_tls
     server: quiz.int.vidio.com
     port: 443
@@ -177,6 +192,7 @@ proxy-groups:
   - name: FASTSSH-SSHKIT-HOWDY
     type: select
     proxies:
+      - SG
       - Hccghgggg-globalssh_vless_ws_tls
       - Hfvvgt-globalssh_vless_ws_tls
       - Tfcggf-globalssh_vless_ws_tls
@@ -190,6 +206,7 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
+      - SG
       - Hccghgggg-globalssh_vless_ws_tls
       - Hfvvgt-globalssh_vless_ws_tls
       - Tfcggf-globalssh_vless_ws_tls
@@ -199,6 +216,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - SG
       - Hccghgggg-globalssh_vless_ws_tls
       - Hfvvgt-globalssh_vless_ws_tls
       - Tfcggf-globalssh_vless_ws_tls
@@ -207,6 +225,7 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
+      - SG
       - Hccghgggg-globalssh_vless_ws_tls
       - Hfvvgt-globalssh_vless_ws_tls
       - Tfcggf-globalssh_vless_ws_tls
