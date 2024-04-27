@@ -129,19 +129,19 @@ dns:
     - +.media.dssott.com
 proxies:
   - name: SG
-    server: sg3.socifiles.com
+    server: quiz.staging.vidio.com
     port: 443
     type: vless
     uuid: 0486eec0-04b6-11ef-81ed-1239d0255272
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: quiz.staging.vidio.com
+    servername: sg3.socifiles.com
     network: ws
     ws-opts:
       path: /vlws
       headers:
-        Host: quiz.staging.vidio.com
+        Host: sg3.socifiles.com
     udp: true
   - name: Hccghgggg-globalssh_vless_ws_tls
     server: quiz.int.vidio.com
